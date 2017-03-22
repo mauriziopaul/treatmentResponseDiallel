@@ -3,9 +3,20 @@ treatmentResponseDiallel
 
 ## Summary
 
-This package is used for the analysis of treatment-response phenotypes in a forthcoming influenza diallel paper. It can be used in conjunction with code housed at [https://mauriziopaul.github.io/flu-diallel](https://mauriziopaul.github.io/flu-diallel).
+This package is used for the analysis of treatment-response phenotypes in a forthcoming influenza diallel paper. It can be installed and used in conjunction with code and specific dependencies housed at [https://mauriziopaul.github.io/flu-diallel](https://mauriziopaul.github.io/flu-diallel).
 
 The findings in this study have been submitted for publication as Maurizio et al., 2017, in *G3: Genes, Genomes, Genetics* (submitted 2017-01-05, in revision). A static version of the data, software, and scripts used to analyze this data upon submission is available at DOI: [10.5281/zenodo.293015](http://dx.doi.org/10.5281/zenodo.293015).
+
+## Installation
+
+You can install `treatmentResponseDiallel` using the following code.
+
+```
+# install.packages("devtools")
+library("devtools")
+install_github("mauriziopaul/treatmentResponseDiallel")
+library("treatmentResponseDiallel")
+```
 
 ## Related Software
 
