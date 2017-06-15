@@ -11,6 +11,25 @@ The findings in this study have been submitted for publication as Maurizio et al
 
 You can install `treatmentResponseDiallel` using the following code.
 
+First, in R:
+
+```
+install.packages(c('coda', 'corpcor','R.oo','MESS'))
+```
+
+On the command line (Mac):
+
+```
+R CMD install BayesDiallel_*.tar.gz;
+R CMD install BayesSpike_*.tar.gz;
+R CMD install cmdline_*.tar.gz;
+R CMD install WVmisc_*.tar.gz;
+R CMD install configfile_*.tar.gz;
+R CMD install treatmentResponseDiallel_*.tar.gz
+```
+
+Then, from R:
+
 ```
 # install.packages("devtools")
 library("devtools")
