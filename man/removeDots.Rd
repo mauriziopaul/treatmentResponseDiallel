@@ -3,7 +3,7 @@
 \name{removeDots}
 \alias{removeDots}
 \alias{removeDots}
-\title{removeDots: remove dots/underscores from a string}
+\title{removeDots: remove dots, underscores from a string}
 \usage{
 removeDots(x)
 
