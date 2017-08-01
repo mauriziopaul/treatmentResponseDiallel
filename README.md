@@ -3,13 +3,32 @@ treatmentResponseDiallel
 
 ## Summary
 
-This package is used for the analysis of treatment-response phenotypes in a forthcoming influenza diallel paper. It can be installed and used in conjunction with code and specific dependencies housed at [https://mauriziopaul.github.io/flu-diallel](https://mauriziopaul.github.io/flu-diallel).
+This package is used for the analysis of treatment-response phenotypes in a forthcoming influenza diallel paper. It can be installed and used in conjunction with code and specific dependencies housed at [https://github.com/mauriziopaul/flu-diallel](https://github.com/mauriziopaul/flu-diallel).
 
 The findings in this study have been submitted for publication as Maurizio et al., 2017, in *G3: Genes, Genomes, Genetics* (submitted 2017-01-05, in revision). A static version of the data, software, and scripts used to analyze this data upon submission is available at DOI: [10.5281/zenodo.293015](http://dx.doi.org/10.5281/zenodo.293015).
 
 ## Installation
 
 You can install `treatmentResponseDiallel` using the following code.
+
+First, in R:
+
+```
+install.packages(c('coda', 'corpcor','R.oo','MESS'))
+```
+
+On the command line (Mac):
+
+```
+R CMD install BayesDiallel_*.tar.gz;
+R CMD install BayesSpike_*.tar.gz;
+R CMD install cmdline_*.tar.gz;
+R CMD install WVmisc_*.tar.gz;
+R CMD install configfile_*.tar.gz;
+R CMD install treatmentResponseDiallel_*.tar.gz
+```
+
+Then, from R:
 
 ```
 # install.packages("devtools")
@@ -30,6 +49,8 @@ library("treatmentResponseDiallel")
 > To learn more about research in the Heise and Valdar labs, please visit and [https://unclineberger.org/people/mark-heise](https://unclineberger.org/people/mark-heise) and [https://valdarlab.unc.edu](https://valdarlab.unc.edu).
 
 ## Key References
+
+Maurizio PL & Ferris MT (2017) “Chapter 28: The Collaborative Cross Resource for Systems Genetics Research of Infectious Diseases.” *Methods in Molecular Biology: Systems Genetics – Methods and Protocols*. Springer Science+Business Media, New York, NY. Klaus Schughart and Robert W. Williams (eds.) 1488:579-596. eBook ISBN: 978-1-4939-6427-7, hardcover ISBN: 978-1-4939-6425-3. doi: [10.1007/978-1-4939-6427-7_28](https://doi.org/10.1007/978-1-4939-6427-7_28)
 
 Zhang Z, Wang W, Valdar W (2014) Bayesian modeling of haplotype effects in multiparent populations. *Genetics* 198(1):139-56. doi: [10.1534/genetics.114.166249](http://dx.doi.org/10.1534/genetics.114.166249)
 
