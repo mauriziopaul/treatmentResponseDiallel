@@ -69,7 +69,7 @@ requireNamespace("tools", quietly=TRUE)
 
 #' @section treatmentResponseDiallel functions:
 
-#' @title removeDots: remove dots/underscores from a string
+#' @title removeDots: remove dots, underscores from a string
 #' @description This removes dots and underscores from a string, replacing them with a space.
 #' 
 #' @param string the dot-containing string or a vector of character strings
@@ -718,8 +718,8 @@ make.matches <- function(data, reps, trt.colname="Trt", trt.string, ctrl.string,
 				total.ctrl.discarded <- total.ctrl.discarded + nrow(dat.ctrl.temp)
 			}
 			if("mean"==strategy & !(num.ctrl < 1) & !(num.trt < 1)){
-				phen.ctrl 		<- apply(X=dat.ctrl[,phenotypes], MARGIN=2, FUN=mean)
-				phen.trt 		<- apply(X=dat.trt[,phenotypes], MARGIN=2, FUN=mean)
+				phen.ctrl 		<- apply(X=dat.ctrl[,phenotypes], MARGIN=2, FUN=mean, na.rm=TRUE)
+				phen.trt 		<- apply(X=dat.trt[,phenotypes], MARGIN=2, FUN=mean, na.rm=TRUE)
 				ctrl.id 		<- apply(as.matrix(dat.ctrl[,"ID"]),MARGIN=2,paste,collapse=";")
 				trt.id 			<- apply(as.matrix(dat.trt[,"ID"]),MARGIN=2,paste,collapse=";")
 				n.discarded 	<- 0
@@ -1641,8 +1641,8 @@ averageMips <- function(filenames, fdir, ...){
 
 	names(mip.table) <- paste("rep", c(1:length(dat)), sep="_")
 	new.mip.table <- mip.table
-	new.mip.table$x  <- rowMeans(mip.table)
-	new.mip.table$sd 	<- apply(X=mip.table, MARGIN=1, FUN=sd)
+	new.mip.table$x  <- rowMeans(mip.table, na.rm=TRUE)
+	new.mip.table$sd 	<- apply(X=mip.table, MARGIN=1, FUN=sd, na.rm=TRUE)
 
 	mip.file <- file.path(fdir, "new.mip.table.csv")
 	write.csv(new.mip.table, mip.file, row.names=TRUE)
@@ -1786,10 +1786,10 @@ plotBatchEffects <- function(savedirs, batchIDs, batchNames, muID, xlim=c(85,101
 			check.names=FALSE))
 		mu <- stacked.matches[,muID]
 		mx <- stacked.matches[,batchIDs]
-#		rowmeans <- rowMeans(as.matrix(mx)) # to center
+#		rowmeans <- rowMeans(as.matrix(mx), na.rm=TRUE) # to center
 #		mx <- mx - rowmeans
 		mx <- mx + mu + 100
-		colmeans <- colMeans(mx)
+		colmeans <- colMeans(mx, na.rm=TRUE)
 		dat[,i+1] <- colmeans
 		colnames(mx) <- batchNames
 		mx.unordered <- mx
@@ -2075,9 +2075,9 @@ plotHPDccColors <- function(coda.object, wanted = varnames(coda.object), prob.wi
     }else{
     	chain <- coda.object
     }
-    mu <- colMeans(chain[, which.wanted])
+    mu <- colMeans(chain[, which.wanted], na.rm=TRUE)
     med <- apply(coda::HPDinterval(chain, prob = 0.01)[which.wanted,
-        ], 1, mean)
+        ], 1, mean, na.rm=TRUE)
     hpd.wide <- coda::HPDinterval(chain, prob = prob.wide)[which.wanted,
         ]
     hpd.narrow <- coda::HPDinterval(chain, prob = prob.narrow)[which.wanted,
