@@ -256,19 +256,19 @@ var.translate <- function(variable.name, ...){
 	var1 <- sub(";k:8", ";WSB", var1)
 	var1 <- sub("tau:Gender:aj", "tau:female:additive", var1)
 	var1 <- sub("tau:Gender:motherj", "tau:female:maternal", var1)
-	var1 <- sub("tau:Gender:dominancej", "tau:female:inbreeding", var1)
+	var1 <- sub("tau:Gender:dominancej", "tau:female:inbred", var1)
 	var1 <- sub("tau:Gender:ASymCrossjkDkj", "tau:female:w", var1)
 	var1 <- sub("tau:Gender:SymCrossjk", "tau:female:v", var1)
 	var1 <- sub("Gender:aj", "f:additive", var1)
 	var1 <- sub("Gender:motherj", "f:maternal", var1)
-	var1 <- sub("Gender:dominancej", "f:inbreeding", var1)
-	var1 <- sub("Gender:BetaHybrid:Av", "f:inbreed.overall", var1)
+	var1 <- sub("Gender:dominancej", "f:inbred", var1)
+	var1 <- sub("Gender:BetaHybrid:Av", "f:inbred.overall", var1)
 	var1 <- sub("Gender:ASymCrossjkDkj", "f:w", var1)
 	var1 <- sub("Gender:SymCrossjk", "f:v", var1)
 	var1 <- sub("aj", "additive", var1)
 	var1 <- sub("motherj", "maternal", var1)
-	var1 <- sub("dominancej", "inbreeding", var1)
-	var1 <- sub("BetaInbred:Av", "inbreed.overall", var1)
+	var1 <- sub("dominancej", "inbred", var1)
+	var1 <- sub("BetaInbred:Av", "inbred.overall", var1)
 	var1 <- sub("ASymCrossjkDkj", "w", var1)
 	var1 <- sub("SymCrossjk", "v", var1)
 	var1 <- sub("BetaInbred:Gender:Av", "female.inbred", var1)
@@ -331,25 +331,25 @@ var.translate.glmm <- function(variable.vec, ...){
 	# var1 <- sub("[A-H]H", ";WSB", var1)
 	var1 <- sub("^f:additive:.$", "tau:female:additive", var1)
 	var1 <- sub("^f:maternal:.$", "tau:female:maternal", var1)
-	var1 <- sub("^f:inbred:.$", "tau:female:inbreeding", var1)
+	var1 <- sub("^f:inbred:.$", "tau:female:inbred", var1)
 	var1 <- sub("^f:v:.$", "tau:female:v", var1)
 	var1 <- sub("^f:w:.$", "tau:female:w", var1)
 	var1 <- sub("^additive:.$", "tau:additive", var1)
 	var1 <- sub("^maternal:.$", "tau:maternal", var1)
-	var1 <- sub("^inbred:.$", "tau:inbreeding", var1)
+	var1 <- sub("^inbred:.$", "tau:inbred", var1)
 	var1 <- sub("^v:.$", "tau:v", var1)
 	var1 <- sub("^w:.$", "tau:w", var1)
 	var1 <- sub("Gender:aj", "f:additive", var1) # fix
 	var1 <- sub("Gender:motherj", "f:maternal", var1) # fix 
-	var1 <- sub("Gender:dominancej", "f:inbreeding", var1) # fix
-	var1 <- sub("Gender:BetaHybrid:Av", "f:inbreed.overall", var1) # fix
+	var1 <- sub("Gender:dominancej", "f:inbred", var1) # fix
+	var1 <- sub("Gender:BetaHybrid:Av", "f:inbred.overall", var1) # fix
 	var1 <- sub("Gender:ASymCrossjkDkj", "f:w", var1) # fix
 	var1 <- sub("Gender:SymCrossjk", "f:v", var1) # fix
 	var1 <- sub("batch.mat.$", "tau:Batch", var1)
 	var1 <- sub("aj", "additive", var1)
 	var1 <- sub("motherj", "maternal", var1)
-	var1 <- sub("dominancej", "inbreeding", var1)
-	var1 <- sub("BetaInbred:Av", "inbreed.overall", var1)
+	var1 <- sub("dominancej", "inbred", var1)
+	var1 <- sub("BetaInbred:Av", "inbred.overall", var1)
 	var1 <- sub("ASymCrossjkDkj", "w", var1)
 	var1 <- sub("SymCrossjk", "v", var1)
 	var1 <- sub("inbred:is.female", "female.inbred", var1)
@@ -1388,8 +1388,8 @@ hpd.plotter <- function(plotdir, chain.object, batched=c(FALSE, TRUE)[1],
 	var.labels.all <- varnames(chain.object)
 	var.labels <- grep(pattern="^additive:", x=var.labels.all, value=TRUE)
 	var.labels <- c(var.labels, grep(pattern="^maternal:", x=var.labels.all, value=TRUE))
-	var.labels <- c(var.labels, grep(pattern="^inbreed.overall", x=var.labels.all, value=TRUE))
-	var.labels <- c(var.labels, grep(pattern="^inbreeding:", x=var.labels.all, value=TRUE))
+	var.labels <- c(var.labels, grep(pattern="^inbred.overall", x=var.labels.all, value=TRUE))
+	var.labels <- c(var.labels, grep(pattern="^inbred:", x=var.labels.all, value=TRUE))
 	plot.hpd(chain.object[,var.labels], names=var.labels, 
 		xlim=xlim, main="General effects")
 	abline(v=0, col="gray")
@@ -1404,7 +1404,7 @@ hpd.plotter <- function(plotdir, chain.object, batched=c(FALSE, TRUE)[1],
 	var.labels <- c(var.labels, grep(pattern="^f:additive:", x=var.labels.all, value=TRUE))
 	var.labels <- c(var.labels, grep(pattern="^f:maternal:", x=var.labels.all, value=TRUE))
 	var.labels <- c(var.labels, grep(pattern="^female.inbred", x=var.labels.all, value=TRUE))
-	var.labels <- c(var.labels, grep(pattern="^f:inbreeding", x=var.labels.all, value=TRUE))
+	var.labels <- c(var.labels, grep(pattern="^f:inbred", x=var.labels.all, value=TRUE))
 	plot.hpd(chain.object[,c(var.labels)],
 		names=var.labels, xlim=xlim, main="Sex-specific"); 
 	abline(v=0, col="gray")
@@ -1461,14 +1461,14 @@ simplify.labels <- function(vector.of.strings, ...){
 	var1 <- sub("Prob:tau:", "", var1)
 	var1 <- sub("Gender:aj", "sex-by-additive", var1)
 	var1 <- sub("Gender:motherj", "sex-by-maternal", var1)
-	var1 <- sub("Gender:dominancej", "sex-by-inbreeding", var1)
-	var1 <- sub("Gender:BetaHybrid:Av", "sex-by-inbreed.overall", var1)
+	var1 <- sub("Gender:dominancej", "sex-by-inbred", var1)
+	var1 <- sub("Gender:BetaHybrid:Av", "sex-by-inbred.overall", var1)
 	var1 <- sub("Gender:ASymCrossjkDkj", "sex-by-asymmetric.epistatic", var1)
 	var1 <- sub("Gender:SymCrossjk", "sex-by-symmetric.epistatic", var1)
 	var1 <- sub("aj", "additive", var1)
 	var1 <- sub("motherj", "maternal", var1)
-	var1 <- sub("dominancej", "inbreeding", var1)
-	var1 <- sub("BetaInbred:Av", "inbreed.overall", var1)
+	var1 <- sub("dominancej", "inbred", var1)
+	var1 <- sub("BetaInbred:Av", "inbred.overall", var1)
 	var1 <- sub("ASymCrossjkDkj", "asymmetric.epistatic", var1)
 	var1 <- sub("SymCrossjk", "symmetric.epistatic", var1)
 	var1 <- sub("BetaInbred:Gender:Av", "female.inbred", var1)
@@ -1490,12 +1490,12 @@ sub.labels <- function (vector.of.strings, ...){
     var1 <- vector.of.strings
     var1 <- sub("f:additive:", "", var1)
     var1 <- sub("f:maternal:", "", var1)
-    var1 <- sub("f:inbreeding:", "", var1)
+    var1 <- sub("f:inbred:", "", var1)
     var1 <- sub("f:v:", "", var1)
     var1 <- sub("f:w:", "", var1)
     var1 <- sub("additive:", "", var1)
     var1 <- sub("maternal:", "", var1)
-    var1 <- sub("inbreeding:", "", var1)
+    var1 <- sub("inbred:", "", var1)
     var1 <- sub("v:", "", var1)
     var1 <- sub("w:", "", var1)
     return(var1)
@@ -1895,7 +1895,7 @@ diallelMatrixMakerShortname <- function(data, dam.col.name, sire.col.name,
   
   colnames(jk.mat) <- paste0("v:", colnames(jk.mat))
   colnames(asymm.mat) <- paste0("w:", colnames(asymm.mat))
-  colnames(inbred.mat) <- paste0("inbreeding:", strains)
+  colnames(inbred.mat) <- paste0("inbred:", strains)
 
   if(is.null(batch.col.name)){
     return(list(	dam.mat=dam.mat, sire.mat=sire.mat, 
@@ -1958,7 +1958,7 @@ diallelMatrixMaker <- function(data, dam.col.name, sire.col.name, batch.col.name
   asymm.mat <- diag(asymm) %*% jk.mat
   colnames(jk.mat) <- paste0("v:", colnames(jk.mat))
   colnames(asymm.mat) <- paste0("w:", colnames(asymm.mat))
-  colnames(inbred.mat) <- paste0("inbreeding:", strains)
+  colnames(inbred.mat) <- paste0("inbred:", strains)
   if (is.null(batch.col.name) & is.null(batch.1.col.name)) {
     return(list(dam.mat = dam.mat, sire.mat = sire.mat, add.mat = add.mat, 
                 mat.mat = mat.mat, inbred.mat = inbred.mat, jk.mat = jk.mat, 
