@@ -46,7 +46,7 @@ library("treatmentResponseDiallel")
 ## More Information
 
 > For more information about my research interests, please visit [https://mauriziopaul.github.io/](https://mauriziopaul.github.io/).
-> To learn more about research in the Heise and Valdar labs, please visit and [https://unclineberger.org/people/mark-heise](https://unclineberger.org/people/mark-heise) and [https://valdarlab.unc.edu](https://valdarlab.unc.edu).
+> To learn more about research in the Heise and Valdar labs, please visit and [https://unclineberger.org/people/mark-heise](https://unclineberger.org/people/mark-heise) and [http://valdarlab.unc.edu](http://valdarlab.unc.edu).
 
 ## Key References
 
