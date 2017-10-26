@@ -32,8 +32,7 @@ Then, from R:
 
 ```
 # install.packages("devtools")
-library("devtools")
-install_github("mauriziopaul/treatmentResponseDiallel")
+devtools::install_github("mauriziopaul/treatmentResponseDiallel")
 library("treatmentResponseDiallel")
 ```
 
