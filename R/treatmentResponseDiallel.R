@@ -20,9 +20,6 @@ NULL
 #' @import BayesDiallel
 NULL
 
-#' @importFrom MESS auc
-NULL
-
 #' @import cmdline
 NULL
 
@@ -60,7 +57,6 @@ requireNamespace("cmdline", quietly=TRUE)
 requireNamespace("coda", quietly=TRUE)
 requireNamespace("configfile", quietly=TRUE)
 requireNamespace("lattice", quietly=TRUE)
-requireNamespace("MESS", quietly=TRUE) ## required for AUC
 requireNamespace("methods", quietly=TRUE)
 requireNamespace("tools", quietly=TRUE)
 #requireNamespace("MCMCglmm", quietly=TRUE)
@@ -615,10 +611,9 @@ make.matches <- function(data, reps, trt.colname="Trt", trt.string, ctrl.string,
 	raw.names <- c("D0", "D1", "D2", "D3", "D4", "D5")
 	alt.names <- c("d0", "d1", "d2", "d3", "d4", "d5")
 	pct.names <- c("pct_D1", "pct_D2", "pct_D3", "pct_D4", "pct_D5")
-	auc.names <- c("auc0", "auc1", "auc2")
 
 	## Generate categories of animals
-	phenotypes <- c(raw.names, alt.names, pct.names, auc.names)
+	phenotypes <- c(raw.names, alt.names, pct.names)
 	phenotypes <- phenotypes[phenotypes %in% names(data)]
 	if(strategy %in% c("two-to-one", "three-to-one")){
 		if(FALSE==select.phenotype){
@@ -871,8 +866,7 @@ csv.maker <- function(fname, TreatDi, burnin, ...){
 stackMatchReps <- function(filenames, fdir, ... ){
 	raw.names 	<- c("D0", "D1", "D2", "D3", "D4")
 	pct.names 	<- c("pct_D1", "pct_D2", "pct_D3", "pct_D4")
-	auc.names 	<- c("auc0", "auc1", "auc2")
-	phens 		<- c(raw.names, pct.names, auc.names)
+	phens 		<- c(raw.names, pct.names)
 	stack 		<- NULL
 	layers 		<- NULL
 
@@ -899,10 +893,6 @@ stackMatchReps <- function(filenames, fdir, ... ){
 	   	   	ylim=c(0, 0.08)
 		   	xlim=c(-35,20)
 		}
-   		if(phens[j] %in% auc.names){
-   			ylim=c(0, 0.043)
-   			xlim=c(-45, 60)
-   		}
    		
   		plot(density(layers[[1]][,phens[j]], na.rm=TRUE), col=col, main=phens[[j]],
   			ylim=ylim, xlim=xlim, xlab="", ylab="")
