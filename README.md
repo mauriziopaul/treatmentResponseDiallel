@@ -14,7 +14,7 @@ You can install `treatmentResponseDiallel` using the following code.
 First, in R:
 
 ```
-install.packages(c('coda', 'corpcor','R.oo','MESS'))
+install.packages(c('coda', 'corpcor','R.oo'))
 ```
 
 On the command line (Mac):
