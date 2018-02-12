@@ -25,7 +25,6 @@ R CMD install BayesSpike_*.tar.gz;
 R CMD install cmdline_*.tar.gz;
 R CMD install WVmisc_*.tar.gz;
 R CMD install configfile_*.tar.gz;
-R CMD install treatmentResponseDiallel_*.tar.gz
 ```
 
 Then, from R:
