@@ -5,7 +5,7 @@
 \title{diallelMatrixMakeAndRotate}
 \usage{
 diallelMatrixMakeAndRotate(data, dam.col.name, sire.col.name,
-  batch.col.name = NULL, batch.1.col.name = NULL, ...)
+  batch.col.name = NULL, batch.1.col.name = NULL, n.strains = 8, ...)
 }
 \arguments{
 \item{data}{data frame}

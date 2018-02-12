@@ -5,7 +5,8 @@
 \title{diallelMatrixMaker}
 \usage{
 diallelMatrixMaker(data, dam.col.name, sire.col.name, batch.col.name = NULL,
-  batch.1.col.name = NULL, ...)
+  batch.1.col.name = NULL, strains = c("AJ", "B6", "129", "NOD", "NZO",
+  "CAST", "PWK", "WSB"), ...)
 }
 \arguments{
 \item{data}{data frame}
@@ -24,7 +25,7 @@ diallelMatrixMaker(data, dam.col.name, sire.col.name, batch.col.name = NULL,
 returns diallel incidence matrices
 }
 \description{
-Make design matrices for diallel, based on dam and sire columns with long strain names.
+Make design matrices for diallel
 }
 \examples{
 ## not run
