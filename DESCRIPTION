@@ -1,18 +1,18 @@
 Package: treatmentResponseDiallel
 Type: Package
-Title: Package For the Analysis of Treatment-Response Phenotypes in the Influenza Diallel Paper
+Title: Package For the Analysis of Treatment-Response Phenotypes in the Influenza Diallel Project
 Version: 0.0.0.9000
-Date: 2017-03-22
+Date: 2018-02-14
 Authors@R: person("Paul", "Maurizio", email = "paul.maurizio@gmail.com",
   role = c("aut", "cre"))
 Description: This package facilitates the use of BayesDiallel for
     analyzing treatment-response experiments in a diallel cross. This sort of design
     may come up in mock-controlled infection studies or placebo-controlled drug
-    studies. The method for determining the treatment effect is heavily dependent
+    studies. An optimal method for determining the treatment effect is dependent
     on the study design and data structure, and this package and associated scripts
-    largely implements a matched-quartets method for estimating 
+    implements an imputation and matching method for estimating 
     treatment effects using a causal inference framework. Static link
-    to related manuscript data, scripts, and package at: http://dx.doi.org/10.5281/zenodo.293015.
+    to related manuscript data, scripts, and package are available at: http://dx.doi.org/10.5281/zenodo.293015.
 Depends:
     R (>= 3.1.0),
     BayesDiallel
@@ -23,7 +23,6 @@ Imports:
     coda,
     configfile,
     lattice,
-    MESS,
     methods,
     tools
 URL: http://mauriziopaul.github.io/
