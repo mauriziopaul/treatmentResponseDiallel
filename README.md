@@ -17,7 +17,7 @@ First, in R:
 install.packages(c('coda', 'corpcor','R.oo'))
 ```
 
-On the command line (Mac):
+Some additional dependencies are located here [https://github.com/mauriziopaul/flu-diallel/tree/master/packages](https://github.com/mauriziopaul/flu-diallel/tree/master/packages). Then, on the command line (for Mac, replacing * with version number):
 
 ```
 R CMD install BayesDiallel_*.tar.gz;
@@ -48,7 +48,9 @@ library("treatmentResponseDiallel")
 
 ## Key References
 
-Maurizio PL & Ferris MT (2017) “Chapter 28: The Collaborative Cross Resource for Systems Genetics Research of Infectious Diseases.” *Methods in Molecular Biology: Systems Genetics – Methods and Protocols*. Springer Science+Business Media, New York, NY. Klaus Schughart and Robert W. Williams (eds.) 1488:579-596. eBook ISBN: 978-1-4939-6427-7, hardcover ISBN: 978-1-4939-6425-3. doi: [10.1007/978-1-4939-6427-7_28](https://doi.org/10.1007/978-1-4939-6427-7_28)
+Maurizio PL, Ferris MT, Keele GR, Miller DR, Shaw GD, Whitmore AC, West A, Morrison CR, Noll KE, Plante KS, Cockrell AS, Threadgill DW, Pardo-Manuel de Villena F, Baric RS, Heise MT & Valdar W (2018) Bayesian diallel analysis reveals *Mx1*-dependent and *Mx1*-independent effects on response to influenza A virus in mice. *G3: Genes, Genomes, Genetics* 8(2):427-445. [10.1534/g3.117.300438](https://doi.org/10.1534/g3.117.300438). PMID:29187420.
+
+Maurizio PL & Ferris MT (2017) “Chapter 28: The Collaborative Cross Resource for Systems Genetics Research of Infectious Diseases.” *Methods in Molecular Biology: Systems Genetics – Methods and Protocols*. Springer Science+Business Media, New York, NY. Klaus Schughart and Robert W. Williams (eds.) 1488:579-596. eBook ISBN: 978-1-4939-6427-7, hardcover ISBN: 978-1-4939-6425-3. doi: [10.1007/978-1-4939-6427-7_28](https://doi.org/10.1007/978-1-4939-6427-7_28). PMID:27933545.
 
 Zhang Z, Wang W, Valdar W (2014) Bayesian modeling of haplotype effects in multiparent populations. *Genetics* 198(1):139-56. doi: [10.1534/genetics.114.166249](http://dx.doi.org/10.1534/genetics.114.166249)
 
