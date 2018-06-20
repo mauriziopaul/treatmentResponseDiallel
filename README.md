@@ -39,7 +39,7 @@ library("treatmentResponseDiallel")
 
 1. **BayesDiallel** [http://valdarlab.unc.edu/software/bayesdiallel/BayesDiallel.html](http://valdarlab.unc.edu/software/bayesdiallel/BayesDiallel.html)
 
-2. **Diploffect** [http://valdarlab.unc.edu/software/Diploffect/build/html/index.html](http://valdarlab.unc.edu/software/Diploffect/build/html/index.html)
+2. **Diploffect** [http://valdarlab.unc.edu/software/diploffect/index.html](http://valdarlab.unc.edu/software/diploffect/index.html)
 
 ## More Information
 
