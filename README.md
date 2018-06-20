@@ -3,9 +3,9 @@ treatmentResponseDiallel
 
 ## Summary
 
-This package is used for the analysis of treatment-response phenotypes in a forthcoming influenza diallel paper. It can be installed and used in conjunction with code and specific dependencies housed at [https://github.com/mauriziopaul/flu-diallel](https://github.com/mauriziopaul/flu-diallel).
+This package is used for the analysis of treatment-response phenotypes in a diallel study on the host response to influenza (Maurizio et al., 2018, *G3*). It can be installed and used in conjunction with code and specific dependencies housed at [https://github.com/mauriziopaul/flu-diallel](https://github.com/mauriziopaul/flu-diallel).
 
-The findings in this study have been submitted for publication as Maurizio et al., 2017, in *G3: Genes, Genomes, Genetics* (submitted 2017-01-05, in revision). A static version of the data, software, and scripts used to analyze this data upon submission is available at DOI: [10.5281/zenodo.293015](http://dx.doi.org/10.5281/zenodo.293015).
+A static version of the data, software, and scripts used to analyze this data upon submission is available at DOI: [10.5281/zenodo.293015](http://dx.doi.org/10.5281/zenodo.293015).
 
 ## Installation
 
@@ -17,7 +17,7 @@ First, in R:
 install.packages(c('coda', 'corpcor','R.oo'))
 ```
 
-Some additional dependencies are located here [https://github.com/mauriziopaul/flu-diallel/tree/master/packages](https://github.com/mauriziopaul/flu-diallel/tree/master/packages). Then, on the command line (for Mac, replacing * with version number):
+Additional dependencies are located here [https://github.com/mauriziopaul/flu-diallel/tree/master/packages](https://github.com/mauriziopaul/flu-diallel/tree/master/packages). Then, on the command line (for Mac, replacing * with the version number):
 
 ```
 R CMD install BayesDiallel_*.tar.gz;
