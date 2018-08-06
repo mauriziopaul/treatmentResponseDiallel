@@ -1,11 +1,12 @@
 ##---------------------------------------------------------------------------------------------------------------------
 ## Title: Functions for the treatmentResponseDiallel
 ## Author: Paul L. Maurizio
+## Email: paul.maurizio@gmail.com
 ## Institution: University of North Carolina at Chapel Hill
 ## Program: Bioinformatics and Computational Biology Ph.D. Curriculum
 ## Advisors: Will Valdar, Mark Heise
 ## Date Created: 2015-06-18
-## Date Updated: 2018-02-12
+## Date Updated: 2018-08-05
 ##---------------------------------------------------------------------------------------------------------------------
 
 #' treatmentResponseDiallel: A package for analysis of infection/treatment response in a diallel cross of inbred lines.
