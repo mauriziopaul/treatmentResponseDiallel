@@ -13,13 +13,13 @@ You can install `treatmentResponseDiallel` using the following code.
 
 First, in R:
 
-```
+```R
 install.packages(c('coda', 'corpcor','R.oo'))
 ```
 
 Additional dependencies are located here [https://github.com/mauriziopaul/flu-diallel/tree/master/packages](https://github.com/mauriziopaul/flu-diallel/tree/master/packages). Then, on the command line (for Mac, replacing * with the version number):
 
-```
+```bash
 R CMD install BayesDiallel_*.tar.gz;
 R CMD install BayesSpike_*.tar.gz;
 R CMD install cmdline_*.tar.gz;
@@ -29,7 +29,7 @@ R CMD install configfile_*.tar.gz;
 
 Then, from R:
 
-```
+```R
 # install.packages("devtools")
 devtools::install_github("mauriziopaul/treatmentResponseDiallel")
 library("treatmentResponseDiallel")
